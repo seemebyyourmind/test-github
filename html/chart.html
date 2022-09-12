@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ve bieu do</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+		<canvas id = "myChart"></canvas>
+	</div>
+	<script type="text/javascript">
+	let myChart = document.getElementById('myChart').getContext('2d');
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 20;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      data:{
+        labels:['13/11/2021', '14/11/2021', '15/11/2021', '16/11/2021', '17/11/2021', ' 18/11/2021'],
+        datasets:[{ // dữ liệu bắt đầu
+          label:'Số Người Mắc',
+          data:[
+            4175,
+            2810,
+            5306,
+            1065,
+            1051,
+            5072
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'red',
+            'red',
+            'red',
+            'red',
+            'red',
+            'red',
+            'red'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        },
+        {
+          label:'Số Ca Khỏi Bệnh',
+          data:[
+            1759,
+            1105,
+            1560,
+            1519,
+            1062,
+            902
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'green',
+            'green',
+            'green',
+            'green',
+            'green',
+            'green',
+            'green'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        },
+        {
+          label:'Số Người Chết',
+          data:[
+            94,
+            145,
+            360,
+            19,
+            162,
+            92
+          ],
+          //backgroundColor:'green',
+          backgroundColor:[
+            'grey',
+            'grey',
+            'grey',
+            'grey',
+            'grey',
+            'grey',
+            'grey'
+          ],
+          borderWidth:1,
+          borderColor:'#777',
+          hoverBorderWidth:3,
+          hoverBorderColor:'#000'
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Biểu đồ về tình hình covid-19',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          enabled:true
+        }
+      }
+    });
+	</script>
+</body>
+
+  
+</html>
